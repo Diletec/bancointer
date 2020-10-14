@@ -1,0 +1,31 @@
+Veja como gerar um certificado
+Você precisa gerar uma solicitação pra assinatura do certificado (CSR). Para isso, use openssl, siga os passos abaixo e, ao final, copie e cole no campo "Assinatura do certificado (CSR)" o texto gerado.
+
+Como gerar uma assinatura de solicitação de certificado:
+1. Digite o seguinte comando no console:
+
+openssl req -new -sha256 -newkey rsa:2048 -nodes -keyout seudominio.key -out seudominio.csr
+Observação: Substitua [seudominio] com o nome de domínio que quer proteger. Por exemplo: acme.com.br.
+
+2. Nos campos solicitados, insira as informações:
+
+Country Name (código do país): as duas letras que representam o país internacionalmente. Ex: BR é Brasil
+
+State or Province Name (nome completo do estado): ex. São Paulo, Minas Gerais, Ceará.
+
+Locality Name (nome completo da cidade): ex. São Paulo, Belo Horizonte, Fortaleza.
+
+Organization Name (a razão social completa da sua empresa): ex. Banco Inter S.A.
+
+Organizational Unit Name (número de aplicação): copie a chave exclusiva gerada pelo Inter e cole-a no campo. Este é o "Número de aplicação" e é formado por letras, números e separado por hífens.
+
+Common Name (nome comum - campo opcional): o nome de domínio totalmente qualificado, ou URL que você deseja proteger. Exemplo: bancointer.com.br
+
+E-mail Address (endereço de e-mail): insira seu e-mail
+
+A Challenge Password (uma senha forte): crie uma senha forte para este SSL
+
+Observação: Se você não quiser inserir uma senha para esse SSL, você pode deixar o campo "senha" em branco. Porém, lembre-se de que isso pode ser mais arriscado.
+3. Abra a CSR em um editor de texto e copie todo o texto gerado.
+
+4. Cole o texto gerado no campo "Assinatura do certificado (CSR)" e clique em "Confirmar".
